@@ -13,11 +13,13 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("\(count)")
+                .accessibilityIdentifier("counterLabel")
             Button(action: {
                 count += 1
             }) {
-                Text("プラスボタン")
+                Text("Increment")
             }
+            .accessibilityIdentifier("incrementButton")
         }
         .padding()
     }

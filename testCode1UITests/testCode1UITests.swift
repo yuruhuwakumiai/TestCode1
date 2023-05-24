@@ -21,24 +21,20 @@ final class YourAppNameUITests: XCTestCase {
     }
 
     func testCounterIncrement() throws {
-        // テストケースの内容をここに記述します。
-        // 例: カウンターの初期値が0であることを検証し、Incrementボタンをタップしてカウンターが増加することを検証するコード
-
         let app = XCUIApplication()
         app.launch()
 
-        // カウンターの初期値が0であることを確認
-        let counterText = app.staticTexts["Counter: 0"]
+        let counterText = app.staticTexts["0"] // カウンターの初期値に合わせて修正
+
         XCTAssertTrue(counterText.exists)
 
-        // Incrementボタンをタップ
-        let incrementButton = app.buttons["Increment"]
+        let incrementButton = app.buttons["incrementButton"]
         incrementButton.tap()
 
-        // カウンターが1に増加したことを確認
-        let updatedCounterText = app.staticTexts["Counter: 1"]
+        let updatedCounterText = app.staticTexts["1"] // インクリメント後の値に合わせて修正
         XCTAssertTrue(updatedCounterText.exists)
     }
+
 
     func testExample() throws {
         // 別のテストケースを記述することもできます。
